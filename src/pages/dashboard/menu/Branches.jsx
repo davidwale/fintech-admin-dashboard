@@ -361,7 +361,7 @@ const Branches = () => {
 
       {/* Upload CSV Modal */}
       {showUploadModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-gray-900/95 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg w-full max-w-md mx-4">
             <div className="flex justify-between items-center p-6">
               <div className="flex items-center gap-3">
