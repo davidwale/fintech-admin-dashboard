@@ -15,9 +15,11 @@ import {
   Cell,
 } from "recharts"
 import Navbar from "../../components/Navbar"
+import { useNavigate } from "react-router-dom"
 
 const Dashboard = () => {
   const [currentDate] = useState(new Date())
+  const navigate = useNavigate()
 
   // Format date as "11 Nov 2024"
   const formattedDate = currentDate.toLocaleDateString("en-US", {
@@ -124,6 +126,10 @@ const Dashboard = () => {
   ]
 
   const totalCards = cardStatusData.reduce((sum, item) => sum + item.value, 0)
+
+  const handleCardRequestNavigate = () => {
+    navigate('/card-request')
+  }
 
   return (
     <div className="flex flex-col h-full">
@@ -255,7 +261,10 @@ const Dashboard = () => {
           <div className="bg-white p-4 rounded-lg border border-gray-200">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-base font-medium text-gray-800">Recent Card Requests</h3>
-              <button className="text-gray-400 hover:text-gray-600">
+              <button
+               onClick={handleCardRequestNavigate}
+               className="text-gray-400 hover:text-gray-600">
+                
                 <Maximize className="w-5 h-5" />
               </button>
             </div>
